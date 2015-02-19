@@ -1,0 +1,138 @@
+EESchema Schematic File Version 2
+LIBS:lab-01-cache
+EELAYER 25 0
+EELAYER END
+$Descr A3 16535 11693
+encoding utf-8
+Sheet 1 1
+Title "Lab-01"
+Date "tor 19 feb 2015"
+Rev "A"
+Comp "Högskolan i Gävle"
+Comment1 "DO NOT REDISTRIBUTE!"
+Comment2 "All rights reserved!"
+Comment3 "Copyright (c) 2015"
+Comment4 "Jonas Sjöberg"
+$EndDescr
+$Comp
+L R R2
+U 1 1 5475EF88
+P 2100 2700
+F 0 "R2" V 2000 2700 60  0000 C CNN
+F 1 "4.7k" V 2100 2700 60  0000 C CNN
+F 2 "" V 2030 2700 30  0000 C CNN
+F 3 "" H 2100 2700 30  0000 C CNN
+	1    2100 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R1
+U 1 1 5475F186
+P 2100 2000
+F 0 "R1" V 2000 2000 60  0000 C CNN
+F 1 "4.7k" V 2100 2000 60  0000 C CNN
+F 2 "" V 2030 2000 30  0000 C CNN
+F 3 "" H 2100 2000 30  0000 C CNN
+	1    2100 2000
+	1    0    0    -1  
+$EndComp
+Text Notes 850  850  0    60   ~ 12
+1. Mätningar med multimeter
+$Comp
+L VSOURCE V1
+U 1 1 54785440
+P 1200 2350
+F 0 "V1" H 1450 2400 60  0000 C CNN
+F 1 "Nätagg." H 1550 2300 60  0000 C CNN
+F 2 "" H 1200 2350 60  0000 C CNN
+F 3 "" H 1200 2350 60  0000 C CNN
+	1    1200 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L VSOURCE V2
+U 1 1 547872C9
+P 2900 2700
+F 0 "V2" H 3150 2750 60  0000 C CNN
+F 1 "Multimeter" H 3300 2650 60  0000 C CNN
+F 2 "" H 2900 2700 60  0000 C CNN
+F 3 "" H 2900 2700 60  0000 C CNN
+	1    2900 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5478754E
+P 1200 3100
+F 0 "#PWR?" H 1200 3100 30  0001 C CNN
+F 1 "GND" H 1200 3000 40  0000 C CNB
+F 2 "" H 1200 3100 60  0000 C CNN
+F 3 "" H 1200 3100 60  0000 C CNN
+	1    1200 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Ameter2 M1
+U 1 1 5478C7F3
+P 4400 2700
+F 0 "M1" H 4300 3000 60  0000 C CNN
+F 1 "Ameter" H 4400 2900 60  0000 C CNN
+F 2 "" H 4450 2650 60  0000 C CNN
+F 3 "" H 4400 2700 60  0000 C CNN
+	1    4400 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 1650 1200 2100
+Wire Wire Line
+	1350 1650 1200 1650
+Wire Wire Line
+	1950 1650 2100 1650
+$Comp
+L VACSOURCE V2
+U 1 1 54792220
+P 5050 2750
+F 0 "V2" H 5275 2800 60  0000 C CNN
+F 1 "SIGSOURCE" H 5500 2700 60  0000 C CNN
+F 2 "" H 5100 2700 60  0000 C CNN
+F 3 "" H 5050 2750 60  0000 C CNN
+	1    5050 2750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2100 1650 2100 1750
+Wire Wire Line
+	2100 2250 2100 2350
+Wire Wire Line
+	2100 2350 2100 2450
+Wire Wire Line
+	1200 2600 1200 3050
+Wire Wire Line
+	1200 3050 1200 3100
+Wire Wire Line
+	2100 2950 2100 3050
+Wire Wire Line
+	1200 3050 2100 3050
+Wire Wire Line
+	2100 3050 2900 3050
+Connection ~ 1200 3050
+Wire Wire Line
+	2900 3050 2900 2950
+Connection ~ 2100 3050
+Wire Wire Line
+	2100 2350 2900 2350
+Wire Wire Line
+	2900 2350 2900 2450
+Connection ~ 2100 2350
+$Comp
+L ISOURCE Ic
+U 1 1 54787FBD
+P 1650 1650
+F 0 "Ic" V 1950 1800 60  0000 C CNN
+F 1 "Multimeter" V 1850 1650 60  0000 C CNN
+F 2 "" H 1650 1625 60  0000 C CNN
+F 3 "" H 1650 1625 60  0000 C CNN
+	1    1650 1650
+	0    1    -1   0   
+$EndComp
+$EndSCHEMATC

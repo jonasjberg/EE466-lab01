@@ -6,7 +6,7 @@
 %
 % Author:
 % Jonas Sjöberg     <tel12jsg@student.hig.se>
-% Oscar Wallberg    <emailadress@student.hig.se>
+% Oscar Wallberg    <tco13owg@student.hig.se>
 % 
 % License:
 % Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
@@ -16,7 +16,7 @@
 % ==============================================================================
 % INCLUDES AND CONFIGURATION
 % ==============================================================================
-\documentclass[draft,11pt,a4paper]{article}
+\documentclass[11pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI
 \usepackage{amssymb}
@@ -65,15 +65,17 @@
 % ABSTRACT
 % ==============================================================================
 \begin{abstract}
-    Syftet med laborationen är att lära känna de vanligaste basinstrumenten i ett elektroniklaboratorium och innefattar övningar i att hantera oscilloskop, multimeter, nätaggregat, och funktionsgenerator.
+    Syftet med laborationen är att lära känna de vanligaste basinstrumenten i
+    ett elektroniklaboratorium och innefattar övningar i att hantera
+    oscilloskop, multimeter, nätaggregat, och funktionsgenerator.
 \end{abstract}
 
 \newpage
 
 {
-%\hypersetup{linkcolor=black}
-\setcounter{tocdepth}{3}
-\tableofcontents
+    %\hypersetup{linkcolor=black}
+    \setcounter{tocdepth}{3}
+    \tableofcontents
 }
 
 \newpage
@@ -105,7 +107,44 @@ Laborationen handlar om olika typer av elektronikinstrument
 % ==============================================================================
 \section{Multimetern}\label{}
 % ==============================================================================
-% TODO
+Vi skall koppla upp en spänningsdelare med två motstånd enligt 
+Figur~\ref{fig:2-mm-schem} och använda två multimetrar för att mäta strömmen 
+\textbf{I} och spänningen \textbf{U}. Som spänningskälla använder vi 
+nätaggregatet. Vi börjar med att välja ut motstånden \textbf{R1} och \textbf{R2}
+och undersöka dessa.
+
+\begin{figure}[htbp]
+    \centering
+        \includegraphics[scale=0.5]{kicad/2-multimeter-schema.png}
+    \caption{Spänningsdelarkoppling}
+    \label{fig:2-mm-schem}
+\end{figure}
+
+Tag två motstånd med olika resistansvärden i området $1-10k\Omega$.
+Anslut motstånden till en multimeter med labsladdar och krokodilklämmor.
+Mät upp resistanserna med multimetern och jämför med resistansvärdena som är
+angivna med färgkoden på motstånden. Välj mätområde på multimetern så att
+största antalet siffror (högsta noggrannhet) erhålls.
+
+\begin{longtable}[c]{@{}lll@{}}
+    \toprule\addlinespace
+    $U_{}$ (V) & Beräknat värde ($\Omega$) &  Uppmätt värde ($\Omega$)
+    \\\addlinespace
+    \midrule\endhead
+    0 & 0 & 0
+    \\\addlinespace
+    0 & 0 & 0
+    \\\addlinespace
+    0 & 0 & 0
+    \\\addlinespace
+    \bottomrule
+    \addlinespace
+    \caption{Idealfall och mätresultat}
+    \label{vdivtable}
+\end{longtable}
+
+
+
 
 \subsection{Mätning av spänning, ström och resistans}\label{meas_multi}
 % ------------------------------------------------------------------------------
