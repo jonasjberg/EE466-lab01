@@ -31,6 +31,7 @@
 %\usepackage{tabto}
 \usepackage{units}
 \usepackage{siunitx}
+\usepackage{afterpage}
   
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
@@ -141,7 +142,7 @@ Anslut motstånden till en multimeter med labsladdar och krokodilklämmor.
 Mät upp resistanserna med multimetern och jämför med resistansvärdena som är
 angivna med färgkoden på motstånden. Välj mätområde på multimetern så att
 största antalet siffror (högsta noggrannhet) erhålls.
-
+\begin{table} %fixed float(?)
 \begin{longtable}[c]{@{}lll@{}}
     \toprule\addlinespace
     $U_{}$ (V) & Beräknat värde ($\Omega$) &  Uppmätt värde ($\Omega$)
@@ -158,7 +159,7 @@ största antalet siffror (högsta noggrannhet) erhålls.
     \caption{Idealfall och mätresultat}
     \label{vdivtable}
 \end{longtable}
-
+\end{table}
 
 
 
