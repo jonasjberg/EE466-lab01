@@ -56,11 +56,10 @@
 \maketitle
 
 \begin{center}
-\begin{tabular}{l r}
-    % TODO
-    Labb utförd: & DD Month Year \\
-    Instruktör: & John Doe, John Doe
-\end{tabular}
+    \begin{tabular}{l r}
+        Labb utförd: & 6 Februari 2015 \\
+        Instruktör: & Efrain Zenteno
+    \end{tabular}
 \end{center}
 
 % ==============================================================================
@@ -151,11 +150,16 @@ kopplas till CH2 så att två bilder syns samtidigt.
 % ==============================================================================
 \section{Multimetern}\label{}
 % ==============================================================================
+
+\subsection{Spänningsdelaren}\label{vdiv}
+% ------------------------------------------------------------------------------
 Vi skall koppla upp en spänningsdelare med två motstånd enligt 
 Figur~\ref{fig:2-mm-schem} och använda två multimetrar för att mäta strömmen 
 \textbf{I} och spänningen \textbf{U}. Som spänningskälla använder vi 
-nätaggregatet. Vi börjar med att välja ut motstånden \textbf{R1} och \textbf{R2}
-och undersöka dessa.
+nätaggregatet, strömmen mäts med en handhållen Mastech multimeter och spänningen
+över \textbf{R2} mäts med bänkmultimetern.
+\par Vi börjar med att välja ut motstånden \textbf{R1} och \textbf{R2} och 
+undersöka dessa.
 
 \begin{figure}[htbp]
     \centering
@@ -164,15 +168,34 @@ och undersöka dessa.
     \label{fig:2-mm-schem}
 \end{figure}
 
-Tag två motstånd med olika resistansvärden i området $1-10k\Omega$.
-Anslut motstånden till en multimeter med labsladdar och krokodilklämmor.
-Mät upp resistanserna med multimetern och jämför med resistansvärdena som är
-angivna med färgkoden på motstånden. Välj mätområde på multimetern så att
-största antalet siffror (högsta noggrannhet) erhålls.
+
+\subsection{Mätning av resistans}\label{vdiv}
+% ------------------------------------------------------------------------------
+Vi väljer två motstånd med olika resistansvärden i området \si{1-10\kohm}
+Anslutningar av komponenter görs med med labbsladdar och krokodilklämmor.
+Resistanserna mäts med bänkmultimetern HP34401A, som har bättre mätnoggrannhet
+än den handhållna Mastech-multimetern. 
+
+\par Mätnoggrannheten för HP34401A är specificerad till $\pm{}0.0035\%$ av
+avläst värde + $\pm{}0.0005\%$ av mätområdet. Instrumentet hittar själv det
+mätområde bäst lämpat för att uttrycka resultatet med det största möjliga antalet
+värdesiffror, som för HP34401A är \si{6\nicefrac{1}{2}} siffror.
+Mätnoggrannheten för den handhållna Mastech-multimetern kan antas vara
+\si{1\%}, vilket är typiskt för multimetrar i den prisklassen.
+\par Vi väljer därför att mäta motstånden med bänkmultimetern HP34401A, som ansluts
+till motstånden med hjälp av labbsladdar av "banankontakt"-typ och krokodilklämmor.
+Vi tänker att kablarnas resistans är negligerbar för det här experimentet.
+
+\par Vi väljer motståndens resistansvärden godtyckligt inom området \si{1-10\kohm}, 
+med \si{10\kohm} för \textbf{R1} och \si{4.7\kohm} för \textbf{R2}.
+Motstånden är sannolikt från E24-serien, med en specificerad \si{5\%} tolerans. Vi kan
+därför vänta oss att det faktiska värdet kan avvika från det markerade med upp till
+$\pm{}5\%$.
+
 \begin{table} %fixed float(?)
 \begin{longtable}[c]{@{}lll@{}}
     \toprule\addlinespace
-    $U_{}$ (V) & Beräknat värde ($\Omega$) &  Uppmätt värde ($\Omega$)
+    $U_{}$ (V) & Beräknat värde (\si{\kohm}) &  Uppmätt värde (\si{\kohm})
     \\\addlinespace
     \midrule\endhead
     0 & 0 & 0
@@ -189,8 +212,7 @@ största antalet siffror (högsta noggrannhet) erhålls.
 \end{table}
 
 
-
-\subsection{Mätning av spänning, ström och resistans}\label{meas_multi}
+\subsection{Mätning av spänning och ström}\label{meas_multi}
 % ------------------------------------------------------------------------------
 % TODO
 
