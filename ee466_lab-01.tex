@@ -156,8 +156,8 @@ kopplas till CH2 så att två bilder syns samtidigt.
 Vi skall koppla upp en spänningsdelare med två motstånd enligt 
 Figur~\ref{fig:2-mm-schem} och använda två multimetrar för att mäta strömmen 
 \textbf{I} och spänningen \textbf{U}. Som spänningskälla använder vi 
-nätaggregatet, strömmen mäts med en handhållen Mastech multimeter och spänningen
-över \textbf{R2} mäts med bänkmultimetern.
+nätaggregatet HP3631A, strömmen mäts med en handhållen multimeter av märket
+Mastech och spänningen över \textbf{R2} mäts med bänkmultimetern HP34401A.
 \par Vi börjar med att välja ut motstånden \textbf{R1} och \textbf{R2} och 
 undersöka dessa.
 
@@ -171,61 +171,73 @@ undersöka dessa.
 
 \subsection{Mätning av resistans}\label{vdiv}
 % ------------------------------------------------------------------------------
-Vi väljer två motstånd med olika resistansvärden i området \si{1-10\kohm}
-Anslutningar av komponenter görs med med labbsladdar och krokodilklämmor.
-Resistanserna mäts med bänkmultimetern HP34401A, som har bättre mätnoggrannhet
-än den handhållna Mastech-multimetern. 
-
 \par Mätnoggrannheten för HP34401A är specificerad till $\pm{}0.0035\%$ av
 avläst värde + $\pm{}0.0005\%$ av mätområdet. Instrumentet hittar själv det
 mätområde bäst lämpat för att uttrycka resultatet med det största möjliga antalet
 värdesiffror, som för HP34401A är \si{6\nicefrac{1}{2}} siffror.
-Mätnoggrannheten för den handhållna Mastech-multimetern kan antas vara
+\par Mätnoggrannheten för den handhållna Mastech-multimetern kan antas vara
 \si{1\%}, vilket är typiskt för multimetrar i den prisklassen.
 \par Vi väljer därför att mäta motstånden med bänkmultimetern HP34401A, som ansluts
 till motstånden med hjälp av labbsladdar av "banankontakt"-typ och krokodilklämmor.
 Vi tänker att kablarnas resistans är negligerbar för det här experimentet.
-
-\par Vi väljer motståndens resistansvärden godtyckligt inom området \si{1-10\kohm}, 
-med \si{10\kohm} för \textbf{R1} och \si{4.7\kohm} för \textbf{R2}.
+\\
+\par Motståndens resistansvärden väljs godtyckligt inom området \si{1-10\kohm}, 
+med \si{10\kohm} för \textbf{R1} och \si{4,7\kohm} för \textbf{R2}.
 Motstånden är sannolikt från E24-serien, med en specificerad \si{5\%} tolerans. Vi kan
 därför vänta oss att det faktiska värdet kan avvika från det markerade med upp till
-$\pm{}5\%$.
+$\pm{}5\%$. 
+\par Mätresultaten visas i Tabell \ref{restable}.
 
-\begin{table} %fixed float(?)
-\begin{longtable}[c]{@{}lll@{}}
-    \toprule\addlinespace
-    $U_{}$ (V) & Beräknat värde (\si{\kohm}) &  Uppmätt värde (\si{\kohm})
-    \\\addlinespace
-    \midrule\endhead
-    0 & 0 & 0
-    \\\addlinespace
-    0 & 0 & 0
-    \\\addlinespace
-    0 & 0 & 0
-    \\\addlinespace
-    \bottomrule
-    \addlinespace
-    \caption{Idealfall och mätresultat}
-    \label{vdivtable}
-\end{longtable}
+
+\begin{table}
+    \begin{longtable}[c]{@{}llc@{}}
+        \toprule\addlinespace
+           & Ideal         & Reell
+        \\\addlinespace
+        \midrule\endhead
+        R1 & \si{10\kohm}  & \si{9,870\kohm}
+        \\\addlinespace
+        R2 & \si{4,7\kohm} & \si{4,677\kohm}
+        \\\addlinespace
+        \bottomrule
+        \addlinespace
+        \caption{Resistansvärden}
+        \label{restable}
+    \end{longtable}
 \end{table}
+
+
 
 
 \subsection{Mätning av spänning och ström}\label{meas_multi}
 % ------------------------------------------------------------------------------
-% TODO
 
-\subsection{Mätresultat}\label{TODO}
-% ------------------------------------------------------------------------------
-% TODO
+\begin{table}
+    \begin{longtable}[c]{@{}llc@{}}
+        \toprule\addlinespace
+                              & Beräknat & Uppmätt
+        \\\addlinespace
+        \midrule\endhead
+        \textbf{I} (\si{\uA}) & 680,27   & 0
+        \\\addlinespace
+        \textbf{U} (\si{\V})  & 3,1973   & 0
+        \\\addlinespace
+        \bottomrule
+        \addlinespace
+        \caption{Spänningsdelaren}
+        \label{vdivtable}
+    \end{longtable}
+\end{table}
+
 
 % ==============================================================================
 % SECTION: RESULTAT
 % ==============================================================================
 \section{Resultat}\label{setup}
 % ==============================================================================
-% TODO
+% TODO: Beräkna felvärdet för ideala och reella komponenter:
+%       fel(%) = [(uppmätt - förväntat) / förväntat] * 100
+
 
 \newpage
 
@@ -237,7 +249,8 @@ $\pm{}5\%$.
 
 \subsection{www}\label{interwebs}
 % ------------------------------------------------------------------------------
-% TODO
+HP34401A datablad\\
+http://literature.cdn.keysight.com/litweb/pdf/5991-1983EN.pdf
 
 \subsection{Trycksaker}\label{literature} %???
 % ------------------------------------------------------------------------------
