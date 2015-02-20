@@ -109,8 +109,11 @@ varav att den första då bara antar värdena 0 eller 1.
 % ==============================================================================
 \section{Oscilloskopet}\label{}
 % ==============================================================================
+
+\subsection{Mätning av likspänning}\label{meas_dc}
+% ------------------------------------------------------------------------------
 Första uppgiften med oscilloskopet är att mäta spänningen från nätaggregatet 
-tillsammans med multimetmern. Nätaggregatets \unit[6]{\si{\volt}} utgång används och 
+tillsammans med multimetmern . Nätaggregatets \unit[6]{\si{\volt}} utgång används och 
 strömgränsen sätts till \unit[0,1]{\si{\ampere}}. Oscilloskopets CH1-ingång ställs 
 till DC-läge och ansluts parallellt med multimetern till nätaggregatet. Multimeterns 
 ``COM'' kopplas till minuspol på nätaggregatet och ``\unit{\si{\volt}}$\Omega$'' 
@@ -119,8 +122,33 @@ till pluspol. Skalfaktorn på oscilloskopet ställs in till
 \par Sedan skall några olika spänningar på nätaggregatet ställas in och både 
 oscilloskopet och multimetern avläses. Skalfaktorn och noll-läget ändras på 
 oscilloskopet för att få en bättre upplösning.
-\\
-\par Den andra uppgiften är att mäta växelspänningar med oscilloskopet; den ansluts 
+%\begin{table}
+\newpage
+\begin{longtable}[c]{@{}cccc@{}}
+    \toprule\addlinespace
+    \begin{tabular}{ll}Inställd spänning\\på nätaggregatet
+    \end{tabular} & \begin{tabular}{ll}Uppmätt med\\multimetern\\
+    (HP 34401A)
+    \end{tabular} & \begin{tabular}{ll}Uppmätt med\\oscilloskop
+    \end{tabular} & \begin{tabular}{ll}Uppmätt med\\multimetern\\(MS8265)\end{tabular}
+    \\\addlinespace
+    \midrule\endhead
+    1 & 1,00097 & 0,999 & 1,002
+    \\\addlinespace
+    2 & 2,0002 & 2,026 & 2,001
+    \\\addlinespace
+    3 & 3,0009 & 3,033 & 3,003
+    \\\addlinespace
+    \bottomrule
+    \addlinespace
+    \caption{Jämförelse av olika spänningar, angett i Volt (\si{\volt})}
+    \label{vdivtable1}
+\end{longtable}
+%\end{table}
+% ------------------------------------------------------------------------------
+\subsection{Mätning av växelspänning}\label{meas_ac}
+% ------------------------------------------------------------------------------
+Den andra uppgiften är att mäta växelspänningar med oscilloskopet; den ansluts 
 till signalgeneratorn som ställs in på \unit[1]{\si{\kilo\hertz}} sinusvåg med en 
 tidbas på \unit[500]{\nicefrac{\si{\micro\second}}{div}} och en skalfaktor på 
 \unit[1]{\nicefrac{\si{\volt}}{div}}. ``Amplitude'' skall justeras på 
@@ -133,25 +161,34 @@ keys'' (Select -\textgreater Frec -\textgreater Measure) mäts frekvensen. Mätn
 andra para\-metrar, t.ex. Amplitude, Pk-Pk, Max, Min och Period, ställs in på samma 
 vis. Några andra kurvformer studeras tillsammans med olika frekvenser och de angivna 
 frekvenserna jämförs med de uppmätta på oscilloskopsbilden.
+\begin{longtable}[c]{@{}ccc@{}}
+    \toprule\addlinespace
+    \begin{tabular}{ll}Kurvform
+    \end{tabular} & \begin{tabular}{ll}Inställd frekvens på\\funktionsgeneratorn
+    \end{tabular} & \begin{tabular}{ll}Uppmätt frekvens\\med oscilloskopet
+    \end{tabular} 
+    \\\addlinespace
+    \midrule\endhead
+    Sinusvåg & 1 \si{\kilo\hertz} & 1,01 \si{\kilo\hertz}
+    \\\addlinespace
+    Fyrkantsvåg & 1 \si{\kilo\hertz} & 1,01 \si{\kilo\hertz}
+    \\\addlinespace
+    Triangelvåg & 1 \si{\kilo\hertz} & 1,009 \si{\kilo\hertz}
+    \\\addlinespace
+    \bottomrule
+    \addlinespace
+    \caption{Jämförelse av olika kurvformer.}
+    \label{vdivtable2}
+\end{longtable}
 \par ``DC-offset'' ändras till AC, för att sedan studera skillnaden. Samma signal 
 kopplas till CH2 så att två bilder syns samtidigt. 
-
-
-\subsection{Mätning av likspänning}\label{meas_dc}
-% ------------------------------------------------------------------------------
-% TODO
-
-\subsection{Mätning av växelspänning}\label{meas_ac}
-% ------------------------------------------------------------------------------
-% TODO
-
 % ==============================================================================
 % SECTION: MULTIMETERN
 % ==============================================================================
 \section{Multimetern}\label{}
 % ==============================================================================
 
-\subsection{Spänningsdelaren}\label{vdiv}
+\subsection{Spänningsdelaren}\label{vdiv1}
 % ------------------------------------------------------------------------------
 Vi skall koppla upp en spänningsdelare med två motstånd enligt 
 Figur~\ref{fig:2-mm-schem} och använda två multimetrar för att mäta strömmen 
@@ -169,7 +206,7 @@ undersöka dessa.
 \end{figure}
 
 
-\subsection{Mätning av resistans}\label{vdiv}
+\subsection{Mätning av resistans}\label{vdiv2}
 % ------------------------------------------------------------------------------
 Vi väljer två motstånd med olika resistansvärden i området \si{1-10\kohm}
 Anslutningar av komponenter görs med med labbsladdar och krokodilklämmor.
@@ -192,7 +229,7 @@ Motstånden är sannolikt från E24-serien, med en specificerad \si{5\%} toleran
 därför vänta oss att det faktiska värdet kan avvika från det markerade med upp till
 $\pm{}5\%$.
 
-\begin{table} %fixed float(?)
+%\begin{table} %fixed float(?)
 \begin{longtable}[c]{@{}lll@{}}
     \toprule\addlinespace
     $U_{}$ (V) & Beräknat värde (\si{\kohm}) &  Uppmätt värde (\si{\kohm})
@@ -207,9 +244,9 @@ $\pm{}5\%$.
     \bottomrule
     \addlinespace
     \caption{Idealfall och mätresultat}
-    \label{vdivtable}
+    \label{vdivtable3}
 \end{longtable}
-\end{table}
+%\end{table}
 
 
 \subsection{Mätning av spänning och ström}\label{meas_multi}
