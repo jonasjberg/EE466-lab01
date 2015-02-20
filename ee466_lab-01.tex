@@ -206,8 +206,56 @@ $\pm{}5\%$.
 \end{table}
 
 
+\subsection{Beräkning av spänning och ström}\label{vdiv_multi}
+% ------------------------------------------------------------------------------
+Spänningen \textbf{U} beräknas med formeln för spänningsdelare \eqref{eq:vdiv1}
+
+\begin{equation}\label{eq:vdiv1}
+    V_{ut} = V_{in} \times \frac{R_2}{R_1 + R_2}
+\end{equation}
+
+Insättning av värden i \eqref{eq:vdiv2} ger \eqref{eq:vdiv3}
+
+\begin{align}                                            
+\textbf{U} &= V_{in} \times \frac{R_2}{R_1 + R_2}                                    \label{eq:vdiv2}\\
+           &= 10\si{\volt} \times \frac{\unit[4,7]{\si{\kohm}}}{\unit[10]{\si{\kohm}} + \unit[4,7]{\si{\kohm}}} \label{eq:vdiv3}\\
+           &= 10           \times \frac{\num{4.7e3}}{\num{10e3} + \num{4.7e3}}       \label{eq:vdiv4}\\
+           &= 3,19727891156462585034                                                 \label{eq:vdiv5}
+\end{align}
+
+
+Spänningen \textbf{U} = \unit[3,19727891156462585034]{\si{\volt}}
+
+Eller avrundat till lämpligt antal värdesiffror $\textbf{U} \approx \unit[3,2]{\si{\volt}}$
+\\
+\\
+Strömmen  \textbf{I} beräknas med Ohms lag \eqref{eq:ohm}
+
+\begin{equation}\label{eq:ohm}
+    \textbf{I} = \frac{\textbf{U}}{\textbf{R}}
+\end{equation}
+
+Insättning av värden i \eqref{eq:ohm} ger \eqref{eq:curr1}
+
+\begin{align}
+\textbf{I} &= \frac{\textbf{U}}{\textbf{R}}                          \label{eq:curr1}\\
+           &= \frac{\unit[10]{\si{\volt}}}{\unit[10]{\si{\kohm}} + \unit[4,7]{\si{\kohm}}}      \label{eq:curr2}\\
+           &= \frac{10}{\num{10e3} + \num{4.7e3}}                    \label{eq:curr3}\\
+           &= 0,68027210884353741497                                 \label{eq:curr4}
+\end{align}
+
+
+Strömmen \textbf{I} = \unit[0,68027210884353741497]{\si{\mA}}
+
+Eller avrundat till lämpligt antal värdesiffror $\textbf{I} \approx \unit[0,68]{\si{\mA}} = \unit[680]{\si{\mA}}$
+
 \subsection{Mätning av spänning och ström}\label{meas_multi}
 % ------------------------------------------------------------------------------
+En så kallad experimentplatta eller "breadboard" används för att konstruera
+spänningsdelaren. Spänningen \textbf{U} mäts över \textbf{R2} med
+bänkmultimetern. Strömmen \textbf{I} mäts genom att den handhållna multimetern
+kopplas i serie med nätaggregatet och \textbf{R1}. Mätresultatet visas i
+Tabell \ref{vdivtable}.
 
 \begin{table}
     \begin{longtable}[c]{@{}llc@{}}
@@ -227,7 +275,7 @@ $\pm{}5\%$.
 \end{table}
 
 
-\subsection{Beräkning av avvikelse}\label{error}
+\subsection{Felberäkning}\label{error}
 % ------------------------------------------------------------------------------
 % TODO: Beräkna felvärdet för ideala och reella komponenter:
 %       fel(%) = [(uppmätt - förväntat) / förväntat] * 100
