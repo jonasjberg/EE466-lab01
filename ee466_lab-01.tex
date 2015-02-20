@@ -191,12 +191,12 @@ $\pm{}5\%$.
 \begin{table}
     \begin{longtable}[c]{@{}llc@{}}
         \toprule\addlinespace
-           & Ideal         & Reell
+           & Ideal                  & Reell
         \\\addlinespace
         \midrule\endhead
-        R1 & \si{10\kohm}  & \si{9,870\kohm}
+        R1 & \unit[10]{\si{\kohm}}  & \unit[9,870]{\si{\kohm}}
         \\\addlinespace
-        R2 & \si{4,7\kohm} & \si{4,677\kohm}
+        R2 & \unit[4,7]{\si{\kohm}} & \unit[4,677]{\si{\kohm}}
         \\\addlinespace
         \bottomrule
         \addlinespace
@@ -277,8 +277,45 @@ Tabell \ref{vdivtable}.
 
 \subsection{Felberäkning}\label{error}
 % ------------------------------------------------------------------------------
-% TODO: Beräkna felvärdet för ideala och reella komponenter:
-%       fel(%) = [(uppmätt - förväntat) / förväntat] * 100
+Felvärdet i procent kan beräknas som;
+% fel(%) = [(uppmätt - förväntat) / förväntat] * 100
+
+\[
+\text{Felvärde}(\si{\percent}) = 
+\frac{\text{Uppmätt värde} - \text{Förväntat värde}}{\text{Förväntat värde}} \times 100
+\]
+
+Felvärdet för motstånden beräknas i \ref{eq:err1} och \ref{eq:err2}
+
+\begin{equation}\label{eq:err1}
+\text{Felvärde R1}(\si{\percent}) =
+\frac{\unit[9,870]{\si{\kohm}} - \unit[10]{\si{\kohm}}}{\unit[10]{\si{\kohm}}}
+\times 100 = -0,3\%
+\end{equation}
+
+\begin{equation}\label{eq:err2}
+\text{Felvärde R2}(\si{\percent}) =
+\frac{\unit[4,677]{\si{\kohm}} - \unit[4,7]{\si{\kohm}}}{\unit[4,7]{\si{\kohm}}}
+\times 100 = -1,3\%
+\end{equation}
+
+Vi kan konstatera att de uppmätta värdena för motstånden ligger inom det område
+specificerat av tillverkaren.
+
+
+Felvärdet för spänningen och strömmen beräknas i \ref{eq:err3} och \ref{eq:err4}
+
+\begin{equation}\label{eq:err3}
+\text{Felvärde}\textbf{ U}(\si{\percent}) =
+\frac{\unit[3,2127]{\si{\V}} - \unit[3,1973]{\si{\V}}}{\unit[3,1973]{\si{\V}}}
+\times 100 = 0,4816\%
+\end{equation}
+
+\begin{equation}\label{eq:err4}
+\text{Felvärde}\textbf{ I}(\si{\percent}) =
+\frac{\unit[690]{\si{\uA}} - \unit[680,27]{\si{\uA}}}{\unit[680,27]{\si{\uA}}}
+\times 100 = 1,4303\%
+\end{equation}
 
 
 % ==============================================================================
